@@ -88,6 +88,9 @@ export default class TreeViewNavigation extends EventManager {
       this.nodes.set(node.id, { node: n, parents: [] })
       this.stage.appendChild(n.getElement())
       this.visible.push(n.id)
+      if (this.settings.allChecked) {
+        this.selected.push(n.id)
+      }
       if (node.children && node.children.length) {
         this.loadChildren(n, node.children, [])
       }
@@ -127,6 +130,9 @@ export default class TreeViewNavigation extends EventManager {
       parent.appendChild(n)
       if (parent.open) {
         this.visible.push(n.id)
+      }
+      if (this.settings.allChecked) {
+        this.selected.push(n.id)
       }
       if (node.children && node.children.length) {
         this.loadChildren(n, node.children, _parents)
