@@ -79,7 +79,7 @@ const tree = new TreeViewNavigation(options)
 | ----------- | ---- | --------- |
 | `container` | `HTMLElement` | **[obrigatório]** Elemento HTML onde a navegação será gerada. |
 | `data` | `Object` | **[obrigatório]** Dados para geração da navegação. |
-| `onRender` | `Function` | Função a ser executada ao fim da impressão do menu. Valor padrão: `null`. |
+| `onRender` | `Function` | Função a ser executada ao fim da impressão do menu. Formato: `(params: Map<{ node: Node, parents: Node[] }>) => {}`. Valor padrão: `null`. |
 | `labelFormatter` | `Function` | Função utilizada para formatar os *labels* dos elementos/nós, no formato: `labelFormatter(node: object): string`. Valor padrão: `null`. |
 | `depth` | `Number` | Indica à partir de qual nível a árvore iniciará colapsada. Valor padrão: `null`. |
 | `selected` | `any[]` | Array de IDs dos nós que irão iniciar selecionados. Valor padrão: `[]`. |
@@ -144,6 +144,7 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 | Propriedade | Tipo | Descrição |
 | ----------- | ---- | --------- |
 | `id` | `string\|number` | ID único do nó. |
+| `name` | `string` | Nome original do nó, pois o label (`attibutes.label`) pode ser alterado para exibição. |
 | `attributes` | `object` | Atributos internos de criação e estilo do nó. |
 | `checked` | `boolean` | Indica se o nó está selecionado (checkbox marcada). |
 | `indeterminate` | `boolean` | Indica se o nó está em estado indeterminado, quando nem todos os filhos estão selecionados (checkbox indeterminado). |
@@ -159,7 +160,7 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 
 | Propriedade | Tipo | Descrição |
 | ----------- | ---- | --------- |
-| `nodes` | `Map<Node>` | Mapa com todos os nós da árvore. |
+| `nodes` | `Map<{ node: Node, parents: Node[] }` | Mapa com todos os nós da árvore e seus pais. As chaves são os IDs dos nós. |
 | `indeterminate` | `string[]\|number[]` | Array de IDs dos nós em estado indeterminado. |
 | `selected` | `string[]\|number[]` | Array de IDs dos nós selecionados. |
 | `visible` | `string[]\|number[]` | Array de IDs dos nós que estão visíveis (grupos expandidos). |
