@@ -76,6 +76,7 @@ export default class TreeViewNavigation extends EventManager {
       const n = new Node({
         id: node.id,
         label: this.settings.labelFormatter ? this.settings.labelFormatter(node) : node.label,
+        name: node.label,
         checked: this.settings.allChecked,
         selectable: this.settings.selectable,
         switchIcon: this.settings.switchIcon,
@@ -112,6 +113,7 @@ export default class TreeViewNavigation extends EventManager {
       const n = new Node({
         id: node.id,
         label: this.settings.labelFormatter ? this.settings.labelFormatter(node) : node.label,
+        name: node.label,
         checked: this.settings.allChecked,
         selectable: this.settings.selectable,
         switchIcon: this.settings.switchIcon,

@@ -53,6 +53,7 @@ export default class Node extends EventManager {
       children: null
     }
     this.id = this.attributes.id ?? generateId()
+    this.name = this.attributes.name
     this.children = []
     this.parent = null
     this.visible = true
@@ -156,6 +157,7 @@ export default class Node extends EventManager {
   appendChild(child) {
     child.parent = this
     child.level = this.level + 1
+    child.visible = this.open
     this.children.push(child)
     this.elements.children.appendChild(child.getElement())
     removeClass(this.elements.main, this.attributes.classNoChildren)
