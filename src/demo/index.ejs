@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #tree {
+        width: 600px;
+        margin: auto;
+      }
+      .chip {
+        background-color: #aaa7bf;
+        padding: 1px 6px;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 0.7rem;
+        margin-left: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="tree"></div>
+    </div>
+  </body>
+</html>

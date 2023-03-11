@@ -1,0 +1,248 @@
+[
+  {
+    "id": 1,
+    "label": "Árvore",
+    "children": [
+      {
+        "id": 2,
+        "label": "Folhas",
+        "children": [
+          {
+            "id": 3,
+            "label": "Verdes",
+            "children": [],
+            "metadata": {
+              "color": "verde",
+              "quantidade": 100
+            }
+          },
+          {
+            "id": 4,
+            "label": "Amarelas",
+            "children": [],
+            "metadata": {
+              "color": "amarelo",
+              "quantidade": 50
+            }
+          }
+        ],
+        "metadata": {
+          "quantidade": 150,
+          "new": true
+        }
+      },
+      {
+        "id": 5,
+        "label": "Galhos",
+        "children": [
+          {
+            "id": 6,
+            "label": "Grandes",
+            "children": [],
+            "metadata": {
+              "tamanho": "grande",
+              "quantidade": 20
+            }
+          },
+          {
+            "id": 7,
+            "label": "Pequenos",
+            "children": [],
+            "metadata": {
+              "tamanho": "pequeno",
+              "quantidade": 30,
+              "new": true
+            }
+          }
+        ],
+        "metadata": {
+          "quantidade": 50
+        }
+      }
+    ],
+    "metadata": {
+      "altura": 10,
+      "idade": 50
+    }
+  },
+  {
+    "id": 8,
+    "label": "Animal",
+    "children": [
+      {
+        "id": 9,
+        "label": "Mamíferos",
+        "children": [
+          {
+            "id": 10,
+            "label": "Cães",
+            "children": [],
+            "metadata": {
+              "raça": "Labrador",
+              "idade": 5
+            }
+          },
+          {
+            "id": 11,
+            "label": "Gatos",
+            "children": [],
+            "metadata": {
+              "raça": "Persa",
+              "idade": 3
+            }
+          }
+        ],
+        "metadata": {
+          "quantidade": 2
+        }
+      },
+      {
+        "id": 12,
+        "label": "Répteis",
+        "children": [
+          {
+            "id": 13,
+            "label": "Cobras",
+            "children": [],
+            "metadata": {
+              "venenosa": true,
+              "comprimento": 2
+            }
+          },
+          {
+            "id": 14,
+            "label": "Lagartos",
+            "children": [],
+            "metadata": {
+              "comprimento": 1
+            }
+          },
+          {
+            "id": 15,
+            "label": "Objeto 1",
+            "children": [
+              {
+                "id": 16,
+                "label": "Filho 1 do objeto 1",
+                "metadata": {
+                  "autor": "João",
+                  "data_criacao": "2022-02-01",
+                  "versao": 1
+                }
+              },
+              {
+                "id": 17,
+                "label": "Filho 2 do objeto 1",
+                "metadata": {
+                  "autor": "Maria",
+                  "data_criacao": "2022-02-02",
+                  "versao": 1
+                }
+              }
+            ],
+            "metadata": {
+              "autor": "Pedro",
+              "data_criacao": "2022-02-01",
+              "versao": 1
+            }
+          },
+          {
+            "id": 18,
+            "label": "Objeto 2",
+            "children": [
+              {
+                "id": 19,
+                "label": "Filho 1 do objeto 2",
+                "metadata": {
+                  "autor": "José",
+                  "data_criacao": "2022-02-03",
+                  "versao": 1
+                }
+              },
+              {
+                "id": 20,
+                "label": "Filho 2 do objeto 2",
+                "metadata": {
+                  "autor": "Ana",
+                  "data_criacao": "2022-02-04",
+                  "versao": 1
+                }
+              }
+            ],
+            "metadata": {
+              "autor": "Mariana",
+              "data_criacao": "2022-02-03",
+              "versao": 1
+            }
+          },
+          {
+            "id": 21,
+            "label": "Objeto 3",
+            "children": [
+              {
+                "id": 22,
+                "label": "Filho 1 do objeto 3",
+                "metadata": {
+                  "autor": "Carlos",
+                  "data_criacao": "2022-02-05",
+                  "versao": 1
+                }
+              },
+              {
+                "id": 23,
+                "label": "Filho 2 do objeto 3",
+                "metadata": {
+                  "autor": "Julia",
+                  "data_criacao": "2022-02-06",
+                  "versao": 1
+                }
+              }
+            ],
+            "metadata": {
+              "autor": "Fernanda",
+              "data_criacao": "2022-02-05",
+              "versao": 1
+            }
+          },
+          {
+            "id": 24,
+            "label": "Objeto 4",
+            "children": [
+              {
+                "id": 25,
+                "label": "Filho 1 do objeto 4",
+                "metadata": {
+                  "autor": "Renato",
+                  "data_criacao": "2022-02-07",
+                  "versao": 1
+                }
+              },
+              {
+                "id": 26,
+                "label": "Filho 2 do objeto 4",
+                "metadata": {
+                  "autor": "Paula",
+                  "data_criacao": "2022-02-08",
+                  "versao": 1
+                }
+              }
+            ],
+            "metadata": {
+              "autor": "Fernanda",
+              "data_criacao": "2022-02-05",
+              "versao": 1
+            }
+          }
+        ],
+        "metadata": {
+          "quantidade": 2
+        }
+      }
+    ],
+    "metadata": {
+      "tipo": "doméstico",
+      "idade": 7
+    }
+  }
+]
+
