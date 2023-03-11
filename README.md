@@ -143,7 +143,7 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 
 | Propriedade | Tipo | Descrição |
 | ----------- | ---- | --------- |
-| `id` | `string|number` | ID único do nó. |
+| `id` | `string\|number` | ID único do nó. |
 | `attributes` | `object` | Atributos internos de criação e estilo do nó. |
 | `checked` | `boolean` | Indica se o nó está selecionado (checkbox marcada). |
 | `indeterminate` | `boolean` | Indica se o nó está em estado indeterminado, quando nem todos os filhos estão selecionados (checkbox indeterminado). |
@@ -160,9 +160,9 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 | Propriedade | Tipo | Descrição |
 | ----------- | ---- | --------- |
 | `nodes` | `Map<Node>` | Mapa com todos os nós da árvore. |
-| `indeterminate` | `string[]|number[]` | Array de IDs dos nós em estado indeterminado. |
-| `selected` | `string[]|number[]` | Array de IDs dos nós selecionados. |
-| `visible` | `string[]|number[]` | Array de IDs dos nós que estão visíveis (grupos expandidos). |
+| `indeterminate` | `string[]\|number[]` | Array de IDs dos nós em estado indeterminado. |
+| `selected` | `string[]\|number[]` | Array de IDs dos nós selecionados. |
+| `visible` | `string[]\|number[]` | Array de IDs dos nós que estão visíveis (grupos expandidos). |
 
 ## Desenvolvimento
 
