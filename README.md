@@ -139,6 +139,7 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 | `labelenter` | Quando o mouse está sobre o label um nó. Ex.: `tree.on('labelenter', (node: Node) => {})` |
 | `labelleave` | Quando o mouse deixa de estar sobre o label um nó. Ex.: `tree.on('labelleave', (node: Node) => {})` |
 | `switchall` | Quando são executados os métodos para expandir ou colapsar todos os nós. Retorna os IDs dos nós visíveis. Ex.: `tree.on('switchall', (visible: string[]\|number[]) => {})` |
+| `changeall` | Quando são executados os métodos para selecionar ou desmarcar todos os nós. Retorna os IDs dos nós selecionados. Ex.: `tree.on('changeall', (selected: string[]\|number[]) => {})` |
 
 ### Principais propriedades do objeto `Node` (componente):
 
@@ -176,6 +177,8 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 | `getNode` | `string[]|number[]` | Retorna a instância de um nó e seus pais pelo seu ID. Formato: `{ node: Node, parents: string[]\|number[] }`. |
 | `expandAll` | `void` | Expande todos os nós. |
 | `collapseAll` | `void` | Colapsa todos os nós. |
+| `selectAll` | `void` | Seleciona todos os nós. |
+| `unselectAll` | `void` | Retira a seleção de todos os nós. |
 
 ## Desenvolvimento
 

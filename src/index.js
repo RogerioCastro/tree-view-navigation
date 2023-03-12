@@ -201,6 +201,31 @@ export default class TreeViewNavigation extends EventManager {
   }
 
   /**
+   * Seleciona (check) todos os nós
+   * @event changeall
+   */
+  selectAll() {
+    this.selected = []
+    this.nodes.forEach((value, key) => {
+      value.node.toggleCheckbox(1, false)
+      this.selected.push(key)
+    })
+    this.emit('changeall', this.selected)
+  }
+
+  /**
+   * Retira a seleção (uncheck) de todos os nós
+   * @event changeall
+   */
+  unselectAll() {
+    this.selected = []
+    this.nodes.forEach((value) => {
+      value.node.toggleCheckbox(0, false)
+    })
+    this.emit('changeall', this.selected)
+  }
+
+  /**
    * Manipula o evento change de um nó e dispara o mesmo evento na biblioteca.
    * @param {object} params Objeto no formato: { event: Event, node: Node}
    * @event change
