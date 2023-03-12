@@ -210,21 +210,21 @@ export default class TreeViewNavigation extends EventManager {
   }
 
   /**
-   * Manipula o evento mouseover no label e dispara o evento 'mouseover'
+   * Manipula o evento labelenter no label e dispara o evento 'labelenter'
    * @param {Node} node Nó
-   * @event mouseover
+   * @event labelenter
    */
-  onMouseover(node) {
-    this.emit('mouseover', node)
+  onLaberEnter(node) {
+    this.emit('labelenter', node)
   }
 
   /**
-   * Manipula o evento mouseout no label e dispara o evento 'mouseout'
+   * Manipula o evento labelleave no label e dispara o evento 'labelleave'
    * @param {Node} node Nó
-   * @event mouseout
+   * @event labelleave
    */
-  onMouseout(node) {
-    this.emit('mouseout', node)
+  onLabelLeave(node) {
+    this.emit('labelleave', node)
   }
 
   /**
@@ -235,8 +235,8 @@ export default class TreeViewNavigation extends EventManager {
     node.on('switch', this.onSwitch.bind(this))
     node.on('change', this.onChange.bind(this))
     node.on('click', this.onClick.bind(this))
-    node.on('mouseover', this.onMouseover.bind(this))
-    node.on('mouseout', this.onMouseout.bind(this))
+    node.on('mouseenter', this.onLaberEnter.bind(this))
+    node.on('mouseleave', this.onLabelLeave.bind(this))
   }
 
   /**

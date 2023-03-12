@@ -126,8 +126,8 @@ export default class Node extends EventManager {
     // Eventos
     this.elements.switch.addEventListener('click', this.onSwitch.bind(this), false)
     this.elements.label.addEventListener('click', this.onLabelClick.bind(this), false)
-    this.elements.label.addEventListener('mouseover', this.onLabelOver.bind(this), false)
-    this.elements.label.addEventListener('mouseout', this.onLabelOut.bind(this), false)
+    this.elements.label.addEventListener('mouseenter', this.onLabelEnter.bind(this), false)
+    this.elements.label.addEventListener('mouseleave', this.onLabelLeave.bind(this), false)
     if (this.attributes.selectable) {
       this.elements.checkboxInput.addEventListener('input', this.onCheckboxInput.bind(this), false)
     }
@@ -195,7 +195,7 @@ export default class Node extends EventManager {
    * @returns
    */
   collapse() {
-    if (!this.open) {
+    if (!this.open || this.children.length === 0) {
       return
     }
     this.open = false
@@ -229,7 +229,7 @@ export default class Node extends EventManager {
    * @returns
    */
   expand() {
-    if (this.open) {
+    if (this.open || this.children.length === 0) {
       return
     }
     this.open = true
@@ -281,21 +281,21 @@ export default class Node extends EventManager {
   }
 
   /**
-   * Manipula o evento mouseover no label
-   * e dispara o evento 'mouseover'
-   * @event mouseover
+   * Manipula o evento mouseenter no label
+   * e dispara o evento 'mouseenter'
+   * @event mouseenter
    */
-  onLabelOver() {
-    this.emit('mouseover', this)
+  onLabelEnter() {
+    this.emit('mouseenter', this)
   }
 
   /**
-   * Manipula o evento mouseout no label
-   * e dispara o evento 'mouseout'
-   * @event mouseout
+   * Manipula o evento mouseleave no label
+   * e dispara o evento 'mouseleave'
+   * @event mouseleave
    */
-  onLabelOut() {
-    this.emit('mouseout', this)
+  onLabelLeave() {
+    this.emit('mouseleave', this)
   }
 
   /**
