@@ -191,10 +191,11 @@ export default class Node extends EventManager {
 
   /**
    * Oculta os filhos do nó e dispara o evento 'collapse'
+   * @param {boolean} event Disparar eventos ou não
    * @event collapse
    * @returns
    */
-  collapse() {
+  collapse(event = true) {
     if (!this.open || this.children.length === 0) {
       return
     }
@@ -219,16 +220,19 @@ export default class Node extends EventManager {
     }
     addClass(this.getElement('switch'), this.attributes.classCollapsed)
     this.animation(this.attributes.animationDuration, callback)
-    this.emit('collapse', this)
-    this.emit('switch', this)
+    if (event) {
+      this.emit('collapse', this)
+      this.emit('switch', this)
+    }
   }
 
   /**
    * Exibe os filhos do nó e dispara o evento 'expand'
+   * @param {boolean} event Disparar eventos ou não
    * @event expand
    * @returns
    */
-  expand() {
+  expand(event = true) {
     if (this.open || this.children.length === 0) {
       return
     }
@@ -253,8 +257,10 @@ export default class Node extends EventManager {
     }
     removeClass(this.getElement('switch'), this.attributes.classCollapsed)
     this.animation(this.attributes.animationDuration, callback)
-    this.emit('expand', this)
-    this.emit('switch', this)
+    if (event) {
+      this.emit('expand', this)
+      this.emit('switch', this)
+    }
   }
 
   /**

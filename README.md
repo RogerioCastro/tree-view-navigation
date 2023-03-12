@@ -138,6 +138,7 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 | `switch` | Quando um grupo de nós e expandido ou colapsado. Ex.: `tree.on('switch', (node: Node) => {})` |
 | `labelenter` | Quando o mouse está sobre o label um nó. Ex.: `tree.on('labelenter', (node: Node) => {})` |
 | `labelleave` | Quando o mouse deixa de estar sobre o label um nó. Ex.: `tree.on('labelleave', (node: Node) => {})` |
+| `switchall` | Quando são executados os métodos para expandir ou colapsar todos os nós. Retorna os IDs dos nós visíveis. Ex.: `tree.on('switchall', (visible: string[]\|number[]) => {})` |
 
 ### Principais propriedades do objeto `Node` (componente):
 
@@ -160,10 +161,21 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 
 | Propriedade | Tipo | Descrição |
 | ----------- | ---- | --------- |
-| `nodes` | `Map<{ node: Node, parents: Node[] }` | Mapa com todos os nós da árvore e seus pais. As chaves são os IDs dos nós. |
+| `nodes` | `Map<{ node: Node, parents: string[]\|number[] }` | Mapa com todos os nós da árvore e os IDs dos seus antecessores (pais). As chaves são os IDs dos nós. |
 | `indeterminate` | `string[]\|number[]` | Array de IDs dos nós em estado indeterminado. |
 | `selected` | `string[]\|number[]` | Array de IDs dos nós selecionados. |
 | `visible` | `string[]\|number[]` | Array de IDs dos nós que estão visíveis (grupos expandidos). |
+
+### Principais métodos da instância:
+
+| Método | Retorno | Descrição |
+| ------ | ------- | --------- |
+| `getSelected` | `string[]\|number[]` | Retorna os IDs dos nós atualmente selecionados. |
+| `getIndeterminate` | `string[]\|number[]` | Retorna os IDs dos nós com status indeterminado (que possue algum filho selecionado, mas não todos). |
+| `getVisible` | `string[]\|number[]` | Retorna os IDs dos nós que estão sendo exibidos no momento (não colapsados). |
+| `getNode` | `string[]|number[]` | Retorna a instância de um nó e seus pais pelo seu ID. Formato: `{ node: Node, parents: string[]\|number[] }`. |
+| `expandAll` | `void` | Expande todos os nós. |
+| `collapseAll` | `void` | Colapsa todos os nós. |
 
 ## Desenvolvimento
 

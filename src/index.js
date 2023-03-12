@@ -141,35 +141,63 @@ export default class TreeViewNavigation extends EventManager {
   }
 
   /**
-   * Retorna os nós atualmente selecionados
-   * @returns {string[]}
+   * Retorna os IDs dos nós atualmente selecionados
+   * @returns {string[]|number[]}
    */
   getSelected() {
     return [...this.selected]
   }
 
   /**
-   * Retorna os nós com status indeterminado (que possue algum filho selecionado, mas não todos)
-   * @returns {string[]}
+   * Retorna os IDs dos nós com status indeterminado (que possue algum filho selecionado, mas não todos)
+   * @returns {string[]|number[]}
    */
   getIndeterminate() {
     return [...this.indeterminate]
   }
 
   /**
-   * Retorna os nós que estão sendo exibidos no momento (não colapsados)
-   * @returns {string[]}
+   * Retorna os IDs dos nós que estão sendo exibidos no momento (não colapsados)
+   * @returns {string[]|number[]}
    */
   getVisible() {
     return [...this.visible]
   }
 
   /**
-   * Retorna a instância de um nó pelo seu ID
-   * @returns {string|number}
+   * Retorna a instância de um nó e seus pais pelo seu ID
+   * @returns {object} Dados do nó no formato { node: Node, parents: string[]|number[] }
    */
   getNode(id) {
     return this.nodes.get(id)
+  }
+
+  /**
+   * Expande todos os nós
+   * @event switchall
+   */
+  expandAll() {
+    this.visible = []
+    this.nodes.forEach((value, key) => {
+      value.node.expand(false)
+      this.visible.push(key)
+    })
+    this.emit('switchall', this.visible)
+  }
+
+  /**
+   * Colapsa todos os nós
+   * @event switchall
+   */
+  collapseAll() {
+    this.visible = []
+    this.nodes.forEach((value, key) => {
+      value.node.collapse(false)
+      if (value.node.level === 1) {
+        this.visible.push(key)
+      }
+    })
+    this.emit('switchall', this.visible)
   }
 
   /**
