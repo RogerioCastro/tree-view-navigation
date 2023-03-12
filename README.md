@@ -174,7 +174,7 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 | `getSelected` | `string[]\|number[]` | Retorna os IDs dos nós atualmente selecionados. |
 | `getIndeterminate` | `string[]\|number[]` | Retorna os IDs dos nós com status indeterminado (que possue algum filho selecionado, mas não todos). |
 | `getVisible` | `string[]\|number[]` | Retorna os IDs dos nós que estão sendo exibidos no momento (não colapsados). |
-| `getNode` | `string[]|number[]` | Retorna a instância de um nó e seus pais pelo seu ID. Formato: `{ node: Node, parents: string[]\|number[] }`. |
+| `getNode` | `string[]\|number[]` | Retorna a instância de um nó e seus pais pelo seu ID. Formato: `{ node: Node, parents: string[]\|number[] }`. |
 | `expandAll` | `void` | Expande todos os nós. |
 | `collapseAll` | `void` | Colapsa todos os nós. |
 | `selectAll` | `void` | Seleciona todos os nós. |
