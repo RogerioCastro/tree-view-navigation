@@ -282,8 +282,8 @@ export default class Node extends EventManager {
    * e dispara o evento 'click'
    * @event click
    */
-  onLabelClick() {
-    this.emit('click', this)
+  onLabelClick(event) {
+    this.emit('click', this, event)
   }
 
   /**

@@ -266,8 +266,8 @@ export default class TreeViewNavigation extends EventManager {
    * @param {Node} node Nó clicado
    * @event click
    */
-  onClick(node) {
-    this.emit('click', node)
+  onClick(node, event) {
+    this.emit('click', node, event)
   }
 
   /**

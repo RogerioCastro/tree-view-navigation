@@ -134,7 +134,7 @@ Os *event listeners* são atribuídos na instância, utilizando a função `on(e
 
 | Evento | Descrição |
 | ------ | --------- |
-| `click` | Quando um nó da árvore é clicado (sobre o label). Ex.: `tree.on('click', (node: Node) => {})` |
+| `click` | Quando um nó da árvore é clicado (sobre o label). Ex.: `tree.on('click', (node: Node, event: Event) => {})` |
 | `change` | Quando um nó da árvore é selecionado (checkbox). Ex.: `tree.on('change', (node: Node, event: Event) => {})` |
 | `switch` | Quando um grupo de nós e expandido ou colapsado. Ex.: `tree.on('switch', (node: Node) => {})` |
 | `labelenter` | Quando o mouse está sobre o label um nó. Ex.: `tree.on('labelenter', (node: Node) => {})` |
