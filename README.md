@@ -80,6 +80,7 @@ const tree = new TreeViewNavigation(options)
 | `container` | `HTMLElement` | **[obrigatório]** Elemento HTML onde a navegação será gerada. |
 | `data` | `Object` | **[obrigatório]** Dados para geração da navegação. |
 | `onRender` | `Function` | Função a ser executada ao fim da impressão do menu. Formato: `(params: Map<{ node: Node, parents: Node[] }>) => {}`. Valor padrão: `null`. |
+| `preNodeCreate` | `Function` | Função a ser executada antes da criação de cada nó, que recebe e retorna o dado bruto do nó. Formato: `(rawNode: object): object => {}`. Valor padrão: `null`. |
 | `labelFormatter` | `Function` | Função utilizada para formatar os *labels* dos elementos/nós, no formato: `labelFormatter(node: object): string`. Valor padrão: `null`. |
 | `depth` | `Number` | Indica à partir de qual nível a árvore iniciará colapsada. Valor padrão: `null`. |
 | `selected` | `any[]` | Array de IDs dos nós que irão iniciar selecionados. Valor padrão: `[]`. |

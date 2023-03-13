@@ -10,6 +10,7 @@ export default class TreeViewNavigation extends EventManager {
    * @param {HTMLElement} options.container - Container HTML para plotagem do gráfico.
    * @param {object} options.data - Dados para plotagem do gráfico.
    * @param {function} [options.onRender] - Callback a ser executada ao fim da impressão do menu. Default: null
+   * @param {function} [options.preNodeCreate] - Callback a ser executada antes da criação de cada nó, que recebe e retorna o dado bruto. Default: null
    * @param {function} [options.labelFormatter] - Callback de formatação dos labels. Default: null
    * @param {number} [options.depth] - Nível no qual a árvore iniciará colapsada. Default: null
    * @param {string[]|number[]} [options.selected] - Array de IDs de nós que irão iniciar selecionados. Default: []
@@ -36,6 +37,7 @@ export default class TreeViewNavigation extends EventManager {
       container: null,
       data: null,
       onRender: () => {},
+      preNodeCreate: null,
       labelFormatter: null,
       depth: null,
       selected: [],
@@ -73,6 +75,9 @@ export default class TreeViewNavigation extends EventManager {
    */
   loadTree() {
     this.settings.data.forEach((node) => {
+      if (this.settings.preNodeCreate) {
+        node = this.settings.preNodeCreate(node)
+      }
       const n = new Node({
         id: node.id,
         label: this.settings.labelFormatter ? this.settings.labelFormatter(node) : node.label,
@@ -114,6 +119,9 @@ export default class TreeViewNavigation extends EventManager {
    */
   loadChildren(parent, children, parents) {
     children.forEach((node) => {
+      if (this.settings.preNodeCreate) {
+        node = this.settings.preNodeCreate(node)
+      }
       const n = new Node({
         id: node.id,
         label: this.settings.labelFormatter ? this.settings.labelFormatter(node) : node.label,
