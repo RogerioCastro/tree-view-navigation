@@ -234,6 +234,21 @@ export default class TreeViewNavigation extends EventManager {
   }
 
   /**
+   * Atualiza as listas selected, visible e indeterminate, em casos nos
+   * quais os dados foram modificados sem disparar os devidos eventos.
+   */
+  update() {
+    this.selected = []
+    this.visible = []
+    this.indeterminate = []
+    this.nodes.forEach((value, key) => {
+      value.node.checked && this.selected.push(key)
+      value.node.indeterminate && this.indeterminate.push(key)
+      value.node.visible && this.visible.push(key)
+    })
+  }
+
+  /**
    * Manipula o evento change de um nó e dispara o mesmo evento na biblioteca.
    * @param {object} params Objeto no formato: { event: Event, node: Node}
    * @event change
