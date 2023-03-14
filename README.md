@@ -1,12 +1,12 @@
 # Tree View Navigation
 
-Navegação vertical para dados hierárquicos no formato de árvore, oferecendo a possibilidade de responder a 5 eventos diferentes: clique, seleção, expandir/retrair, *mouseover* e *mouseout*.
+Navegação vertical para dados hierárquicos no formato de árvore.
 
 ![Tree View Navigation](/src/assets/tree-view-navigation.png "Tree View Navigation")
 
 ## Características
 
-- Suporte a 5 tipos de eventos
+- Suporte a 7 tipos de eventos
 - 2 opções de ícones para expandir/retrair
 - Zero dependências
 - Modo dark
